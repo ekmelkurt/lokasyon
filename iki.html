@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Çizim Örneği</h1>
+    <br><br><br>    
+    <canvas id="canvas" width="200" height="100" style="border:1px solid black;"></canvas>
+
+    
+
+
+    <script>
+        var c=document.getElementById("canvas");
+        var ctx=c.getContext("2d");
+
+        ctx.moveTo(0,0);
+        ctx.lineTo(100,25);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(120,30,20,0,2*Math.PI);
+        ctx.stroke();
+
+        ctx.font="25px Arial";
+        ctx.fillText("E",112,40);
+
+        
+
+        
+    </script>
+    <h4><a href="index.html">Ana Sayfaya Dön</a></h4>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+
+<html>
+  <head>
+    
+  </head>
+
+  <body>
+    <h1 id="selam">Selam!</h1>
+    <h3 id="isim">İsim</h3>
+    <h3 id="soyisim">Soyisim</h3>
+    <h3 id="tarih">Tarih</h3>
+  <button type="button" onClick="degistir()">Tıkla Ve Değiştir</button>
+
+
+  
+    <script>
+      function degistir()
+      {
+        document.getElementById("selam").innerHTML="Yeni Selam";
+        document.getElementById("isim").innerHTML="Ekmel";
+        document.getElementById("soyisim").innerHTML="Kurt"; 
+        document.getElementById("tarih").innerHTML=Date();
+      }
+    </script>
+    <h4><a href="index.html">Ana Sayfaya Dön</a></h4>
+  </body>
+</html>

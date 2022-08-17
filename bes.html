@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>5. Ders Ödev</h1>
+    <button type="button" onclick="lokasyonAl()">Konum Bilgisi</button>
+    <br><br><br>
+    <p id="lokasyon">.......</p>
+
+    <script>
+        var lokasyon = document.getElementById("lokasyon");
+        function lokasyonAl() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            }
+            else {
+                lokasyon.innerHTML = "Sen Uçmuşsun!!";
+            }
+        }
+        function showPosition(position) {
+            lokasyon.innerHTML = "Enlem: " + position.coords.latitude + "<br> Boylam: " + position.coords.longitude;
+            localStorage.setItem('enlem',position.coords.latitude);
+            localStorage.setItem('boylam',position.coords.longitude);
+        }
+    </script>
+    <form>
+        <label>İsim:</label>
+        <input id="isim" type="text" /> <br>
+        <label>Soyisim:</label>
+        <input id="soyisim" type="text" /> <br>
+        <button type="button" onclick="veriyiSakla()">Bilgileri Sakla</button>
+        <br>
+        <button type="button" onclick="veriyiGetir()">Veriyi Getir</button>
+    </form>
+    <p id="sonuc">Sonuç</p>
+    <br>
+    <script>
+        function veriyiSakla() {
+            var isim = document.getElementById("isim").value;
+            localStorage.setItem('isim', isim);
+            var soyisim = document.getElementById("soyisim").value;
+            localStorage.setItem('soyisim', soyisim);
+        }
+        function veriyiGetir() {
+            var sonuc= document.getElementById("sonuc");
+            sonuc.innerHTML="<br> İsim: " + localStorage.getItem("isim")+"<br> Soyisim: " + localStorage.getItem("soyisim")+
+            "<br> Enlem. "+localStorage.getItem("enlem")+"<br> Boylam: " + localStorage.getItem("boylam");
+        }
+
+    </script>
+    <h4><a href="index.html">Ana Sayfaya Dön</a></h4>
+</body>
+
+</html>

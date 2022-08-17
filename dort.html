@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Hafızaya Veriyi Kaydet</h3>
+    <input type="text" id="data"/>
+    <button type="button" onclick="veriyiSakla()">Veriyi Sakla</button>
+    <br><br>
+    <button type="button" onclick="veriyiGetir()">Veriyi Getir</button>
+    <p id="veri">Birazdan Görüşürüz</p>
+
+    
+
+    <script>
+        function veriyiSakla()
+        {
+            var data=document.getElementById("data").value;
+            localStorage.setItem('data',data);
+        }
+
+        function veriyiGetir()
+        {
+            document.getElementById("veri").innerHTML="İki kişinin bildiği sır değildir. Değer: "+localStorage.getItem("data");
+        }
+    </script>
+
+        <h4><a href="index.html">Ana Sayfaya Dön</a></h4>
+</body>
+</html>
